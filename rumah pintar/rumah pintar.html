@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rumah Pintar - Tempat Belajar Masa Depan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Rumah Pintar</div>
+        <ul class="nav-links">
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+    <div id="particles-js"></div>
+    <main>
+      <section id="beranda" class="hero">
+        <div class="hero-content">
+          <h1>Selamat Datang di Rumah Pintar</h1>
+          <p>Tempat di mana belajar menjadi menyenangkan dan efektif</p>
+          <a href="#program" class="cta-button">Jelajahi Program Kami</a>
+        </div>
+      </section>
+
+      <section id="tentang" class="about">
+        <h2>Tentang Kami</h2>
+        <p>
+          Rumah Pintar adalah pusat pembelajaran inovatif yang menggabungkan
+          teknologi modern dengan metode pengajaran terbaik untuk menciptakan
+          pengalaman belajar yang unik dan efektif.
+        </p>
+      </section>
+
+      <section id="program" class="features">
+        <h2>Program Unggulan Kami</h2>
+        <div class="feature-container">
+          <div class="feature" onclick="toggleDescription(this)">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Pembelajaran Interaktif</h3>
+            <div class="feature-description">
+              <p>
+                Nikmati pengalaman belajar yang interaktif dengan teknologi
+                terkini. Kami menggunakan platform e-learning canggih, simulasi
+                3D, dan lab virtual untuk membuat pembelajaran lebih menarik dan
+                efektif.
+              </p>
+            </div>
+          </div>
+          <div class="feature" onclick="toggleDescription(this)">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Guru Berpengalaman</h3>
+            <div class="feature-description">
+              <p>
+                Dibimbing oleh guru-guru terbaik dan berpengalaman di bidangnya.
+                Tim pengajar kami terdiri dari profesional berpengalaman yang
+                tidak hanya ahli dalam materi, tetapi juga dalam metode
+                pengajaran modern.
+              </p>
+            </div>
+          </div>
+          <div class="feature" onclick="toggleDescription(this)">
+            <i class="fas fa-school"></i>
+            <h3>Fasilitas Modern</h3>
+            <div class="feature-description">
+              <p>
+                Dilengkapi dengan fasilitas modern untuk mendukung proses
+                belajar. Dari smart classroom hingga perpustakaan digital, kami
+                menyediakan lingkungan belajar yang inspiratif dan nyaman untuk
+                semua siswa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontak" class="contact">
+        <h2>Hubungi Kami</h2>
+        <form>
+          <input type="text" placeholder="Nama" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Pesan" required></textarea>
+          <button type="submit">Kirim Pesan</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="social-media">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 Rumah Pintar. Hak Cipta Dilindungi.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      function toggleDescription(element) {
+        element.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
