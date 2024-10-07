@@ -87,10 +87,47 @@ function toggleDescription(element) {
 document.addEventListener("DOMContentLoaded", function(e) {
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".nav-links");
-
+    e.preventDefault(e);
     burger.addEventListener("click", function(e) {
         nav.classList.toggle("active");
         burger.classList.toggle("toggle");
         e.preventDefault(e);
     });
 });
+
+//mengatur agar tepat ketika di click
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+        const offset = 100; // Sesuaikan dengan tinggi navbar
+        const elementPosition =
+            targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+        });
+    });
+});
+// menambahk menu agar bisa di kirim ke email
+document
+    .getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+        event.preventDefault(); // Mencegah form dari submit default
+
+        var nama = document.getElementById("nama").value; // Ambil nama dari input
+        var email = document.getElementById("email").value;
+        var pesan = document.getElementById("pesan").value;
+
+        var subject = "Pesan Kontak dari " + nama;
+        var body = `Nama: ${nama}%0AEmail: ${email}%0APesan: ${pesan}%0A%0ATerima Kasih`;
+
+        var mailtoUrl = `mailto:eatharasya@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+        window.open(mailtoUrl, "_blank");
+    });
