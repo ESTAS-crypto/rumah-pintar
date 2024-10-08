@@ -1,7 +1,6 @@
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
      :root {
-        --primary-color: #4caf50;
-        --secondary-color: #45a049;
+        --primary-color: #00e6e6;
         --text-color: #333;
         --bg-color: #f4f4f4;
     }
@@ -28,17 +27,52 @@
         z-index: 1000;
     }
     
+    #changing-title {
+        font-family: Arial, sans-serif;
+        font-size: 2em;
+        text-align: center;
+    }
+    
+    .letter {
+        display: inline-block;
+        transition: opacity 0.1s ease-in-out;
+    }
+    
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 5%;
     }
+    /* Animasi Logo */
+    /* Animasi Logo */
     
     .logo {
         font-size: 1.5rem;
         font-weight: 700;
         color: var(--primary-color);
+        display: inline-block;
+        white-space: nowrap;
+        /* Mencegah pemisahan teks ke baris baru */
+    }
+    
+    .logo-letter {
+        display: inline-block;
+        transition: opacity 1s ease-in-out;
+    }
+    /* Tambahkan animasi fade untuk huruf logo */
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .logo-letter {
+        animation: fadeIn 1.3s ease-in;
     }
     
     .nav-links {
