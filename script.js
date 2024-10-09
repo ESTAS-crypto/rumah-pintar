@@ -1,4 +1,4 @@
-//buat animasi home
+//buat animasi home/background
 particlesJS("particles-js", {
     particles: {
         number: {
@@ -84,7 +84,7 @@ particlesJS("particles-js", {
 function toggleDescription(element) {
     element.classList.toggle("active");
 }
-
+//side bar
 document.addEventListener("DOMContentLoaded", function(e) {
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".nav-links");
@@ -108,18 +108,36 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         const offsetPosition = elementPosition - offset;
 
         window.scrollTo({
+
             top: offsetPosition,
             behavior: "smooth",
         });
     });
 });
+
+
 // menambahk menu agar bisa di kirim ke email
+function toggleDescription(element) {
+    element.classList.toggle("active");
+}
+
+//side bar
+document.addEventListener("DOMContentLoaded", function(e) {
+    // ... (kode sidebar yang ada tetap sama)
+});
+
+//mengatur agar tepat ketika di click
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    // ... (kode scroll yang ada tetap sama)
+});
+
+// menambahkan menu agar bisa di kirim ke email
 document
     .getElementById("contactForm")
     .addEventListener("submit", function(event) {
         event.preventDefault(); // Mencegah form dari submit default
 
-        var nama = document.getElementById("nama").value; // Ambil nama dari input
+        var nama = document.getElementById("nama").value;
         var email = document.getElementById("email").value;
         var pesan = document.getElementById("pesan").value;
 
@@ -130,8 +148,48 @@ document
       subject
     )}&body=${encodeURIComponent(body)}`;
 
-        window.open(mailtoUrl, "_blank");
+        // Tampilkan navbar notifikasi
+        showNotificationNavbar("Apakah Anda yakin ingin mengirim pesan ini?", function(confirmed) {
+            if (confirmed) {
+                window.open(mailtoUrl, "_blank");
+                showNotificationNavbar("Pesan Anda telah dikirim!", null, 3000);
+            } else {
+                showNotificationNavbar("Pengiriman pesan dibatalkan.", null, 3000);
+            }
+        });
     });
+
+// Fungsi untuk menampilkan navbar notifikasi
+function showNotificationNavbar(message, callback, duration) {
+    var navbar = document.getElementById("notificationNavbar");
+    var messageElement = document.getElementById("notificationMessage");
+    var confirmButton = document.getElementById("notificationConfirm");
+    var cancelButton = document.getElementById("notificationCancel");
+
+    messageElement.textContent = message;
+    navbar.style.display = "flex";
+
+    if (callback) {
+        confirmButton.style.display = "inline-block";
+        cancelButton.style.display = "inline-block";
+        confirmButton.onclick = function() {
+            navbar.style.display = "none";
+            callback(true);
+        };
+        cancelButton.onclick = function() {
+            navbar.style.display = "none";
+            callback(false);
+        };
+    } else {
+        confirmButton.style.display = "none";
+        cancelButton.style.display = "none";
+        if (duration) {
+            setTimeout(function() {
+                navbar.style.display = "none";
+            }, duration);
+        }
+    }
+}
 // animasi pada logo dan judul
 // Array teks yang akan dianimasi dan di ganti
 const texts = [
