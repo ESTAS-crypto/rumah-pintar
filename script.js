@@ -272,4 +272,94 @@ logoElement.textContent = "Rumah " + texts[0];
 setInterval(changeTexts, 5000);
 
 // Panggil fungsi changeTexts saat halaman dimuat untuk memulai animasi
-document.addEventListener('DOMContentLoaded', changeTexts);
+document.addEventListener('DOMContentLoaded', changeTexts); // ... (kode JavaScript yang sudah ada tetap sama) ...
+
+// Fitur ubah warna tema
+const colorOptions = document.querySelectorAll('.color-option');
+const root = document.documentElement;
+
+colorOptions.forEach(option => {
+    option.style.backgroundColor = option.dataset.color;
+    option.addEventListener('click', () => {
+        root.style.setProperty('--primary-color', option.dataset.color);
+    });
+});
+
+// Efek mengetik
+const typingText = document.getElementById('typing-text');
+const phrases = [
+    'Belajar dengan cara yang menyenangkan',
+    'Tingkatkan keterampilan Anda',
+    'Jelajahi dunia teknologi',
+    'Bergabunglah dengan komunitas kami'
+];
+let phraseIndex = 0;
+let letterIndex = 0;
+let currentPhrase = '';
+let isDeleting = false;
+let typingSpeed = 100;
+
+function typeEffect() {
+    const currentPhraseText = phrases[phraseIndex];
+
+    if (isDeleting) {
+        currentPhrase = currentPhraseText.substring(0, letterIndex - 1);
+        typingSpeed = 50;
+    } else {
+        currentPhrase = currentPhraseText.substring(0, letterIndex + 1);
+        typingSpeed = 100;
+    }
+
+    typingText.textContent = currentPhrase;
+
+    if (!isDeleting && letterIndex === currentPhraseText.length) {
+        isDeleting = true;
+        typingSpeed = 2000; // Pause at end
+    } else if (isDeleting && letterIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+
+    letterIndex += isDeleting ? -1 : 1;
+
+    setTimeout(typeEffect, typingSpeed);
+}
+
+typeEffect();
+
+// Tambahan: Animasi scroll untuk section
+const sections = document.querySelectorAll('section');
+
+const observerOptions = {
+    root: null,
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+        }
+    });
+}, observerOptions);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// Tambahan: Efek paralaks yang lebih halus
+document.addEventListener('mousemove', (e) => {
+    const layers = document.querySelectorAll('.parallax-layer');
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    layers.forEach((layer, index) => {
+        const speed = (index + 1) * 0.1;
+        const x = (window.innerWidth / 2 - mouseX) * speed;
+        const y = (window.innerHeight / 2 - mouseY) * speed;
+        layer.style.transform = `translate(${x}px, ${y}px)`;
+    });
+});
+
+// ... (kode JavaScript lain tetap sama) ...
