@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 :root {
     --primary-color: #00e6e6;
-    --secondary-color: #ff6b6b;
+    /*--secondary-color: #ff6b6b;*/
     --text-color: #333;
     --bg-color: #f4f4f4;
 }
@@ -44,7 +44,6 @@ body {
 }
 
 .color-options {
-    grid-template-columns: repeat(3, 1fr);
     display: flex;
     justify-content: space-around;
     margin-top: 1rem;
@@ -262,18 +261,6 @@ nav {
     background-color: var(--secondary-color);
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: all 0.6s;
-}
-
-.cta-button:hover::before {
-    left: 100%;
 }
 
 
@@ -337,7 +324,6 @@ nav {
     margin-bottom: 3rem;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
     background-color: #fff;
@@ -348,10 +334,9 @@ nav {
 .feature::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    left: -30%;
+    width: 155%;
+    height: 100%;
     background: radial-gradient(circle, rgba(0, 230, 230, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
     transition: all 0.5s ease;
     opacity: 0;
