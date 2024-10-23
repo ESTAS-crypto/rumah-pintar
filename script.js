@@ -203,7 +203,7 @@ const titleElement = document.getElementById("changing-title");
 const logoElement = document.querySelector('.logo');
 
 // Karakter yang digunakan dalam animasi acak
-const alphabet = 'ABCDE ';
+const alphabet = 'ABCDEF ';
 
 // Fungsi untuk mendapatkan karakter acak
 function getRandomChar() {
@@ -226,7 +226,6 @@ function animateLetter(element, targetChar, duration, steps, isLogo) {
         }
     }, interval);
 }
-
 
 // isLogo: boolean untuk membedakan animasi logo dan judul
 function animateText(element, oldText, newText, isLogo) {
@@ -253,6 +252,27 @@ function animateText(element, oldText, newText, isLogo) {
         }, i * 50);
     }
 }
+
+// Fungsi untuk mengganti teks
+function changeTexts() {
+    const oldText = texts[currentIndex];
+    currentIndex = (currentIndex + 1) % texts.length;
+    const newText = texts[currentIndex];
+
+    animateText(titleElement, oldText, newText, false);
+    animateText(logoElement, oldText, newText, true);
+}
+
+// Inisialisasi teks pertama
+titleElement.textContent = "Selamat Datang di Rumah " + texts[0];
+logoElement.textContent = "Rumah " + texts[0];
+
+// Ganti teks setiap detik
+setInterval(changeTexts, 5555);
+
+// Panggil fungsi changeTexts saat halaman dimuat untuk memulai animasi
+document.addEventListener('DOMContentLoaded', changeTexts);
+// Sisanya dari kode JavaScript Anda tetap sama ...
 
 // Fungsi untuk mengganti teks
 function changeTexts() {
@@ -362,4 +382,13 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
-// ... (kode JavaScript lain tetap sama) ...
+// Parallax background effect based on mouse movement
+document.addEventListener('mousemove', function(e) {
+    const parallaxItems = document.querySelectorAll('.parallax-bg');
+    parallaxItems.forEach(item => {
+        const speed = item.getAttribute('data-speed') || 0.5;
+        const x = (window.innerWidth - e.pageX * speed) / 100;
+        const y = (window.innerHeight - e.pageY * speed) / 100;
+        item.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+});
