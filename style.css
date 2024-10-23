@@ -73,6 +73,10 @@ body {
     margin: 0 auto;
 }
 
+.card-3d:hover {
+    transform: rotateY(20deg) rotateX(10deg) scale(1.05);
+}
+
 .card-3d>div {
     position: absolute;
     width: 100%;
@@ -159,6 +163,17 @@ nav {
     transform: scale(1.05);
 }
 
+.animated-word,
+.logo-word {
+    display: inline-block;
+}
+
+.letter,
+.logo-letter {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -232,8 +247,11 @@ nav {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+
+/* 3D Hero Content Rotation */
+
 .hero-content:hover {
-    transform: perspective(1000px) rotateY(-5deg);
+    transform: perspective(1000px) rotateY(10deg) rotateX(5deg);
 }
 
 .hero h1 {
@@ -433,7 +451,7 @@ textarea {
 
 button[type="submit"] {
     background-color: var(--primary-color);
-    color: #fff;
+    color: #000000;
     border: none;
     padding: 1rem 2.5rem;
     border-radius: 50px;
