@@ -1,148 +1,165 @@
 <!DOCTYPE html>
 <html lang="id">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rumah Pintar</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <div class="logo">Rumah Pintar</div>
-            <ul class="nav-links">
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#fitur-interaktif">Ganti warna</a></li>
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#program">Program</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
+      <nav>
+        <div class="logo">Rumah</div>
+        <ul class="nav-links">
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#fitur-interaktif">Ganti warna</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
     </header>
     <div id="notificationNavbar" class="notification-navbar">
-        <p id="notificationMessage"></p>
-        <button id="notificationConfirm" class="notification-button confirm">Ya</button>
-        <button id="notificationCancel" class="notification-button cancel">Tidak</button>
+      <p id="notificationMessage"></p>
+      <button id="notificationConfirm" class="notification-button confirm">
+        Ya
+      </button>
+      <button id="notificationCancel" class="notification-button cancel">
+        Tidak
+      </button>
     </div>
 
     <div id="particles-js"></div>
     <main>
-        <section id="beranda" class="hero">
-            <div class="hero-content">
-                <h1 id="changing-title">
-                    Selamat Datang di Rumah</h1>
-                <p>Tempat di mana belajar menjadi menyenangkan dan efektif</p>
-                <a href="#program" class="cta-button">Jelajahi Program Kami</a>
+      <section id="beranda" class="hero">
+        <div class="hero-content">
+          <h1 id="changing-title">Selamat Datang di Rumah</h1>
+          <p>Tempat di mana belajar menjadi menyenangkan dan efektif</p>
+          <a href="#program" class="cta-button">Jelajahi Program Kami</a>
+        </div>
+      </section>
+      <section id="fitur-interaktif" class="interactive-features">
+        <h2>Fitur Interaktif</h2>
+        <div class="feature-grid">
+          <div class="interactive-feature" id="color-changer">
+            <h3>Ubah Warna Tema</h3>
+            <div class="color-options">
+              <div class="color-option" data-color="#00e6e6"></div>
+              <div class="color-option" data-color="#ff6b6b"></div>
+              <div class="color-option" data-color=" #ff99cc"></div>
             </div>
-        </section>
-        <section id="fitur-interaktif" class="interactive-features">
-            <h2>Fitur Interaktif</h2>
-            <div class="feature-grid">
-                <div class="interactive-feature" id="color-changer">
-                    <h3>Ubah Warna Tema</h3>
-                    <div class="color-options">
-                        <div class="color-option" data-color="#00e6e6"></div>
-                        <div class="color-option" data-color="#ff6b6b"></div>
-                        <div class="color-option" data-color=" #ff99cc"></div>
-
-                    </div>
-                </div>
-                <div class="interactive-feature" id="typing-effect">
-                    <h3>Efek Mengetik</h3>
-                    <p id="typing-text"></p>
-                </div>
-                <div class="interactive-feature" id="3d-card">
-                    <h3>Kartu 3D</h3>
-                    <div class="card-3d">
-                        <div class="card-front">Depan Kartu</div>
-                        <div class="card-back">Belakang Kartu</div>
-                    </div>
-                </div>
+          </div>
+          <div class="interactive-feature" id="typing-effect">
+            <h3>Efek Mengetik</h3>
+            <p id="typing-text"></p>
+          </div>
+          <div class="interactive-feature" id="3d-card">
+            <h3>Kartu 3D</h3>
+            <div class="card-3d tilt-effect glass">
+              <div class="card-front">Depan Kartu</div>
+              <div class="card-back">Belakang Kartu</div>
             </div>
-        </section>
-        <section id="tentang" class="about">
-            <h2>Tentang Kami</h2>
-            <p>
-                Rumah Pintar adalah pusat pembelajaran inovatif yang menggabungkan teknologi modern dengan metode pengajaran terbaik untuk menciptakan pengalaman belajar yang unik dan efektif.
-                <strong>Apa itu Rumah Pintar?</strong> Rumah pintar merupakan rumah yang terintegrasi dengan berbagai perangkat teknologi cerdas yang dapat dikendalikan secara otomatis maupun jarak jauh. Mulai dari sistem pencahayaan, keamanan, hingga
-                kontrol suhu, semua dapat dikelola dengan mudah menggunakan perangkat pintar. Di Rumah Pintar, kami mengajarkan cara mengimplementasikan teknologi ini ke dalam kehidupan sehari-hari untuk menciptakan rumah masa depan yang lebih efisien
-                dan nyaman.
-            </p>
-        </section>
+          </div>
+        </div>
+      </section>
+      <section id="tentang" class="about">
+        <h2>Tentang Kami</h2>
+        <p>
+          Rumah Pintar adalah pusat pembelajaran inovatif yang menggabungkan
+          teknologi modern dengan metode pengajaran terbaik untuk menciptakan
+          pengalaman belajar yang unik dan efektif.
+          <strong>Apa itu Rumah Pintar?</strong> Rumah pintar merupakan rumah
+          yang terintegrasi dengan berbagai perangkat teknologi cerdas yang
+          dapat dikendalikan secara otomatis maupun jarak jauh. Mulai dari
+          sistem pencahayaan, keamanan, hingga kontrol suhu, semua dapat
+          dikelola dengan mudah menggunakan perangkat pintar. Di Rumah Pintar,
+          kami mengajarkan cara mengimplementasikan teknologi ini ke dalam
+          kehidupan sehari-hari untuk menciptakan rumah masa depan yang lebih
+          efisien dan nyaman.
+        </p>
+      </section>
 
-        <section id="program" class="features">
-            <h2>Program Unggulan Kami</h2>
-            <div class="feature-container">
-                <div class="feature" onclick="toggleDescription(this)">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Pembelajaran Interaktif</h3>
-                    <div class="feature-description">
-                        <p>
-                            Nikmati pengalaman belajar yang interaktif dengan teknologi terkini. Kami menggunakan platform e-learning canggih, simulasi 3D, dan lab virtual untuk membuat pembelajaran lebih menarik dan efektif.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature" onclick="toggleDescription(this)">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Guru Berpengalaman</h3>
-                    <div class="feature-description">
-                        <p>
-                            Dibimbing oleh guru-guru terbaik dan berpengalaman di bidangnya. Tim pengajar kami terdiri dari profesional berpengalaman yang tidak hanya ahli dalam materi, tetapi juga dalam metode pengajaran modern.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature" onclick="toggleDescription(this)">
-                    <i class="fas fa-school"></i>
-                    <h3>Fasilitas Modern</h3>
-                    <div class="feature-description">
-                        <p>
-                            Dilengkapi dengan fasilitas modern untuk mendukung proses belajar. Dari smart classroom hingga perpustakaan digital, kami menyediakan lingkungan belajar yang inspiratif dan nyaman untuk semua siswa.
-                        </p>
-                    </div>
-                </div>
+      <section id="program" class="features">
+        <h2>Program Unggulan Kami</h2>
+        <div class="feature-container">
+          <div class="feature" onclick="toggleDescription(this)">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Pembelajaran Interaktif</h3>
+            <div class="feature-description">
+              <p>
+                Nikmati pengalaman belajar yang interaktif dengan teknologi
+                terkini. Kami menggunakan platform e-learning canggih, simulasi
+                3D, dan lab virtual untuk membuat pembelajaran lebih menarik dan
+                efektif.
+              </p>
             </div>
-        </section>
+          </div>
+          <div class="feature" onclick="toggleDescription(this)">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Guru Berpengalaman</h3>
+            <div class="feature-description">
+              <p>
+                Dibimbing oleh guru-guru terbaik dan berpengalaman di bidangnya.
+                Tim pengajar kami terdiri dari profesional berpengalaman yang
+                tidak hanya ahli dalam materi, tetapi juga dalam metode
+                pengajaran modern.
+              </p>
+            </div>
+          </div>
+          <div class="feature" onclick="toggleDescription(this)">
+            <i class="fas fa-school"></i>
+            <h3>Fasilitas Modern</h3>
+            <div class="feature-description">
+              <p>
+                Dilengkapi dengan fasilitas modern untuk mendukung proses
+                belajar. Dari smart classroom hingga perpustakaan digital, kami
+                menyediakan lingkungan belajar yang inspiratif dan nyaman untuk
+                semua siswa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="kontak" class="contact">
-            <h2>Hubungi Kami</h2>
-            <form id="contactForm">
-                <input type="text" id="nama" placeholder="Nama" required />
-                <input type="email" id="email" placeholder="Email" required />
-                <textarea id="pesan" placeholder="Pesan" required></textarea>
-                <button class="btn" type="submit" id="sendEmail">
-                    Kirim Pesan
-                </button>
-            </form>
-        </section>
+      <section id="kontak" class="contact">
+        <h2>Hubungi Kami</h2>
+        <form id="contactForm">
+          <input type="text" id="nama" placeholder="Nama" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <textarea id="pesan" placeholder="Pesan" required></textarea>
+          <button class="btn" type="submit" id="sendEmail">Kirim Pesan</button>
+        </form>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="social-media">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-            <p>&copy; 2024 Rumah Pintar. CREATE BY EVAN ATHARASYA.</p>
+      <div class="footer-content">
+        <div class="social-media">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
+        <p>&copy; 2024 Rumah Pintar. CREATE BY EVAN ATHARASYA.</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
     <script>
-        function toggleDescription(element) {
-            element.classList.toggle("active");
-        }
+      function toggleDescription(element) {
+        element.classList.toggle("active");
+      }
     </script>
-</body>
-
+  </body>
 </html>
